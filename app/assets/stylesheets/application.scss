@@ -9,3 +9,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body{
+  background-image: url("cinema.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.list{
+  background-color: white;
+  border-radius: 10px;
+  width: 500px;
+  padding: 2vh;
+}
+.list__title{
+  color: white;
+  background-color: black!important;
+}

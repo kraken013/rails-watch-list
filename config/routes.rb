@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'tesmorts/new'
+  get 'tesmorts/chaussette'
+  get 'tesmorts/cassos'
   get 'bookmarks/new'
   get 'bookmarks/create'
   get 'bookmarks/destroy'
