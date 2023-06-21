@@ -2,13 +2,24 @@
 
 <h2><%= @list.name %></h2>
 <p>bookmarks:</p>
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li><%= link_to bookmark.comment %></li>
-    <li><%= link_to "destroy", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: 'Are u sure about that ?'}
-       %></li>
-  <% end %>
-</ul>
+<% @list.bookmarks.each do |bookmark| %>
+  <div class="card">
+    <div classa="card__title">
+      <%= bookmark.movie.title %>
+    </div>
+    <div class="card__content">
+      <%= bookmark.movie.overview %>
+      <%= bookmark.movie.rating %>
+      <%= image_tag(bookmark.movie.poster_url) %>
+      <%= link_to bookmark.comment %>
+      <%= link_to "destroy", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: 'Are u sure about that ?'}
+        %>
+    </div>
+  </div>
+<% end %>
+
+
+
 
 <%= link_to "Nouveau bookmark", new_list_bookmark_path(@list) %>
 <br>
